@@ -13,7 +13,7 @@ function changeAXPFontSize() {
   });
 }
 
-// Debounce function to limit how often changeFontSize is called
+// Debounce function to limit how often changeAXPFontSize is called
 function debounce(func, delay) {
   let timeoutId;
   return function (...args) {
@@ -41,14 +41,12 @@ var observer = new MutationObserver(function (mutations) {
   mutations.forEach(function (mutation) {
     if (mutation.type === "childList" || mutation.type === "subtree") {
       needsUpdate = true;
-      initialUpdate = false;
     }
   });
 
   if (needsUpdate) {
     // console.log("Apply new fonts");
     debouncedChangeAXPFontSize();
-    initialUpdate = false;
   }
 });
 
