@@ -1,24 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "E.164 Phone Number Detection",
-  "version": "1.2",
-  "description": "Click-to-call via Avaya Experience Platform Workspaces",
-  "icons": {
-    "32": "icons8-call-32.png",
-    "64": "icons8-call-64.png"
-  },
-  "minimum_chrome_version": "88",
+  "name": "AXP Metrics Font Size",
+  "version": "1.0",
+  "author": "Nipon Maluengnont",
+  "description": "Change font size of specific elements on AXP Dashboard.",
+  "permissions": ["activeTab", "scripting"],
   "content_scripts": [
     {
-      "matches": ["*://*/*"],
-      "js": ["e164PhoneDetection.js"],
-      "all_frames": true
+      "matches": ["*://*.avayacloud.com/services/ApplicationCenter/*"],
+      "js": ["axpDashboard.js"]
     }
   ],
-  "web_accessible_resources": [
-    {
-      "resources": ["icons8-call-32.png", "icons8-call-64.png"],
-      "matches": ["<all_urls>"]
+  "action": {
+    "default_icon": {
+      "48": "icon-text-48.png",
+      "64": "icon-text-64.png"
     }
-  ]
+  },
+  "icons": {
+    "48": "icon-text-48.png",
+    "64": "icon-text-64.png"
+  }
 }
